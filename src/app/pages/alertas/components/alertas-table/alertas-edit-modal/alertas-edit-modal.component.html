@@ -1,0 +1,87 @@
+<div class='row mt-3'>
+  <div class='col-md-2'></div>
+  <div class='col-md-8'>
+    <div class='modal-content' style='overflow-y: initial !important'>
+      <form [formGroup]='form' class='form-horizontal'>
+        <div class='modal-header'>
+          <h4 class='modal-title'>Editar Alerta</h4>
+          <button class='close' aria-label='Close' (click)='close()'>
+            <span aria-hidden='true'>&times;</span>
+          </button>
+        </div>
+        <div class='modal-body' style='height: 65vh; overflow-y: auto;'>
+          <ba-card cardTitle='Información Alerta'>
+            <div class='form-group row' [ngClass]='{'has-error': (!idalertaAC.valid && idalertaAC.touched), 'has-success': (idalertaAC.valid && idalertaAC.touched)}'>
+              <label for='inputidalertaAC' class='col-sm-2 form-control-label'>Idalerta</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=idalerta [formControl]='idalertaAC' type='' maxlength='4' class='form-control' id='inputidalertaAC' placeholder='idalerta' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!descripcionAC.valid && descripcionAC.touched), 'has-success': (descripcionAC.valid && descripcionAC.touched)}'>
+              <label for='inputdescripcionAC' class='col-sm-2 form-control-label'>Descripcion</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=descripcion [formControl]='descripcionAC' type='' maxlength='150' class='form-control' id='inputdescripcionAC' placeholder='descripcion' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!fechaAC.valid && fechaAC.touched), 'has-success': (fechaAC.valid && fechaAC.touched)}'>
+              <label for='inputfechaAC' class='col-sm-2 form-control-label'>Fecha</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=fecha [formControl]='fechaAC' type='' maxlength='' class='form-control' id='inputfechaAC' placeholder='fecha' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!statusAC.valid && statusAC.touched), 'has-success': (statusAC.valid && statusAC.touched)}'>
+              <label for='inputstatusAC' class='col-sm-2 form-control-label'>Status</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=status [formControl]='statusAC' type='' maxlength='45' class='form-control' id='inputstatusAC' placeholder='status' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!personal_idpersonalAC.valid && personal_idpersonalAC.touched), 'has-success': (personal_idpersonalAC.valid && personal_idpersonalAC.touched)}'>
+              <label for='inputpersonal_idpersonalAC' class='col-sm-2 form-control-label'>Personal_idpersonal</label>
+              <div class='col-sm-10'>
+               <select [(ngModel)]='personal_idpersonal' [formControl]='personal_idpersonalAC' class='form-control' id='inputpersonal_idpersonalAC' >
+                 <option value='item.idpersonal' *ngFor='let item of _personal'>{{item.nombre}}<option>
+               </select>
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!tipoalerta_idtipoalertaAC.valid && tipoalerta_idtipoalertaAC.touched), 'has-success': (tipoalerta_idtipoalertaAC.valid && tipoalerta_idtipoalertaAC.touched)}'>
+              <label for='inputtipoalerta_idtipoalertaAC' class='col-sm-2 form-control-label'>Tipoalerta_idtipoalerta</label>
+              <div class='col-sm-10'>
+               <select [(ngModel)]='tipoalerta_idtipoalerta' [formControl]='tipoalerta_idtipoalertaAC' class='form-control' id='inputtipoalerta_idtipoalertaAC' >
+                 <option value='item.idtipoalerta' *ngFor='let item of _tipoalerta'>{{item.nombre}}<option>
+               </select>
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!bajaAC.valid && bajaAC.touched), 'has-success': (bajaAC.valid && bajaAC.touched)}'>
+              <label for='inputbajaAC' class='col-sm-2 form-check-label'>Baja</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=baja [formControl]='bajaAC' type='' maxlength='1' class='form-check-input' id='inputbajaAC' placeholder='baja' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!created_byAC.valid && created_byAC.touched), 'has-success': (created_byAC.valid && created_byAC.touched)}'>
+              <label for='inputcreated_byAC' class='col-sm-2 form-control-label'>Created_by</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=created_by [formControl]='created_byAC' type='' maxlength='11' class='form-control' id='inputcreated_byAC' placeholder='created_by' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!created_atAC.valid && created_atAC.touched), 'has-success': (created_atAC.valid && created_atAC.touched)}'>
+              <label for='inputcreated_atAC' class='col-sm-2 form-control-label'>Created_at</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=created_at [formControl]='created_atAC' type='' maxlength='' class='form-control' id='inputcreated_atAC' placeholder='created_at' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!modified_atAC.valid && modified_atAC.touched), 'has-success': (modified_atAC.valid && modified_atAC.touched)}'>
+              <label for='inputmodified_atAC' class='col-sm-2 form-control-label'>Modified_at</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=modified_at [formControl]='modified_atAC' type='' maxlength='' class='form-control' id='inputmodified_atAC' placeholder='modified_at' >
+              </div>
+            </div>
+          </ba-card>
+        </div>
+        <div class='modal-footer'>
+          <button class='btn btn-danger cancel-btn' (click)='close()'>Cancelar</button>
+          <button [disabled]='!form.valid' class='btn btn-primary confirm-btn' (click)='onSubmit(form.value)'>Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

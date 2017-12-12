@@ -1,0 +1,83 @@
+<div class='row mt-3'>
+  <div class='col-md-2'></div>
+  <div class='col-md-8'>
+    <div class='modal-content' style='overflow-y: initial !important'>
+      <form [formGroup]='form' class='form-horizontal'>
+        <div class='modal-header'>
+          <h4 class='modal-title'>Agregar Tipotrabajo</h4>
+          <button class='close' aria-label='Close' (click)='close()'>
+            <span aria-hidden='true'>&times;</span>
+          </button>
+        </div>
+        <div class='modal-body' style='height: 65vh; overflow-y: auto;'>
+          <ba-card cardTitle='Información Tipotrabajo'>
+            <div class='form-group row' [ngClass]='{'has-error': (!idtipotrabajoAC.valid && idtipotrabajoAC.touched), 'has-success': (idtipotrabajoAC.valid && idtipotrabajoAC.touched)}'>
+              <label for='inputidtipotrabajoAC' class='col-sm-2 form-control-label'>Idtipotrabajo</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=idtipotrabajo [formControl]='idtipotrabajoAC' type='' maxlength='4' class='form-control' id='inputidtipotrabajoAC' placeholder='idtipotrabajo' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!nombreAC.valid && nombreAC.touched), 'has-success': (nombreAC.valid && nombreAC.touched)}'>
+              <label for='inputnombreAC' class='col-sm-2 form-control-label'>Nombre</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=nombre [formControl]='nombreAC' type='' maxlength='60' class='form-control' id='inputnombreAC' placeholder='nombre' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!largoAC.valid && largoAC.touched), 'has-success': (largoAC.valid && largoAC.touched)}'>
+              <label for='inputlargoAC' class='col-sm-2 form-control-label'>Largo</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=largo [formControl]='largoAC' type='' maxlength='11' class='form-control' id='inputlargoAC' placeholder='largo' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!anchoAC.valid && anchoAC.touched), 'has-success': (anchoAC.valid && anchoAC.touched)}'>
+              <label for='inputanchoAC' class='col-sm-2 form-control-label'>Ancho</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=ancho [formControl]='anchoAC' type='' maxlength='11' class='form-control' id='inputanchoAC' placeholder='ancho' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!publicoAC.valid && publicoAC.touched), 'has-success': (publicoAC.valid && publicoAC.touched)}'>
+              <label for='inputpublicoAC' class='col-sm-2 form-control-label'>Publico</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=publico [formControl]='publicoAC' type='' maxlength='11' class='form-control' id='inputpublicoAC' placeholder='publico' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!mayoreoAC.valid && mayoreoAC.touched), 'has-success': (mayoreoAC.valid && mayoreoAC.touched)}'>
+              <label for='inputmayoreoAC' class='col-sm-2 form-control-label'>Mayoreo</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=mayoreo [formControl]='mayoreoAC' type='' maxlength='11' class='form-control' id='inputmayoreoAC' placeholder='mayoreo' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!maquilaAC.valid && maquilaAC.touched), 'has-success': (maquilaAC.valid && maquilaAC.touched)}'>
+              <label for='inputmaquilaAC' class='col-sm-2 form-control-label'>Maquila</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=maquila [formControl]='maquilaAC' type='' maxlength='11' class='form-control' id='inputmaquilaAC' placeholder='maquila' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!preciopublicoAC.valid && preciopublicoAC.touched), 'has-success': (preciopublicoAC.valid && preciopublicoAC.touched)}'>
+              <label for='inputpreciopublicoAC' class='col-sm-2 form-control-label'>Preciopublico</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=preciopublico [formControl]='preciopublicoAC' type='' maxlength='11' class='form-control' id='inputpreciopublicoAC' placeholder='preciopublico' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!preciomayoreoAC.valid && preciomayoreoAC.touched), 'has-success': (preciomayoreoAC.valid && preciomayoreoAC.touched)}'>
+              <label for='inputpreciomayoreoAC' class='col-sm-2 form-control-label'>Preciomayoreo</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=preciomayoreo [formControl]='preciomayoreoAC' type='' maxlength='11' class='form-control' id='inputpreciomayoreoAC' placeholder='preciomayoreo' >
+              </div>
+            </div>
+            <div class='form-group row' [ngClass]='{'has-error': (!preciomaquilaAC.valid && preciomaquilaAC.touched), 'has-success': (preciomaquilaAC.valid && preciomaquilaAC.touched)}'>
+              <label for='inputpreciomaquilaAC' class='col-sm-2 form-control-label'>Preciomaquila</label>
+              <div class='col-sm-10'>
+                <input [(ngModel)]=preciomaquila [formControl]='preciomaquilaAC' type='' maxlength='11' class='form-control' id='inputpreciomaquilaAC' placeholder='preciomaquila' >
+              </div>
+            </div>
+          </ba-card>
+        </div>
+        <div class='modal-footer'>
+          <button class='btn btn-danger cancel-btn' (click)='close()'>Cancelar</button>
+          <button [disabled]='!form.valid' class='btn btn-primary confirm-btn' (click)='onSubmit(form.value)'>Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
