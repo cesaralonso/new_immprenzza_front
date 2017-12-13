@@ -1,0 +1,75 @@
+<div class="row mt-3">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <div class="modal-content" style="overflow-y: initial !important">
+      <form [formGroup]="form" class="form-horizontal">
+        <div class="modal-header">
+          <h4 class="modal-title">Editar Si_permiso</h4>
+          <button class="close" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="height: 65vh; overflow-y: auto;">
+          <ba-card cardTitle="Información Si_permiso">
+            <div class="form-group row" [ngClass]="{'has-error': (!idsi_permisoAC.valid && idsi_permisoAC.touched), 'has-success': (idsi_permisoAC.valid && idsi_permisoAC.touched)}">
+              <label for="inputidsi_permisoAC" class="col-sm-2 form-control-label">Idsi_permiso</label>
+              <div class="col-sm-10">
+                <input [(ngModel)]="idsi_permiso" [formControl]="idsi_permisoAC" type="number" maxlength='11' class="form-control" id="inputidsi_permisoAC">
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!accesoAC.valid && accesoAC.touched), 'has-success': (accesoAC.valid && accesoAC.touched)}">
+              <label for="inputaccesoAC" class="col-sm-2 form-check-label">Acceso</label>
+              <div class="col-sm-10">
+                <input [(ngModel)]="acceso" [formControl]="accesoAC" type="checkbox" maxlength='4' class="form-check-input" id="inputaccesoAC">
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!Rol_idsi_rolAC.valid && Rol_idsi_rolAC.touched), 'has-success': (Rol_idsi_rolAC.valid && Rol_idsi_rolAC.touched)}">
+              <label for="inputRol_idsi_rolAC" class="col-sm-2 form-control-label">Rol_idsi_rol</label>
+              <div class="col-sm-10">
+               <select [(ngModel)]="Rol_idsi_rol" [formControl]="Rol_idsi_rolAC" class="form-control" id="inputRol_idsi_rolAC" >
+                 <option value="{{item.idsi_rol}}" *ngFor="let item of _si_rol">{{item.idsi_rol}}</option>
+               </select>
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!Modulo_idsi_moduloAC.valid && Modulo_idsi_moduloAC.touched), 'has-success': (Modulo_idsi_moduloAC.valid && Modulo_idsi_moduloAC.touched)}">
+              <label for="inputModulo_idsi_moduloAC" class="col-sm-2 form-control-label">Modulo_idsi_modulo</label>
+              <div class="col-sm-10">
+               <select [(ngModel)]="Modulo_idsi_modulo" [formControl]="Modulo_idsi_moduloAC" class="form-control" id="inputModulo_idsi_moduloAC" >
+                 <option value="{{item.idsi_modulo}}" *ngFor="let item of _si_modulo">{{item.idsi_modulo}}</option>
+               </select>
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!bajaAC.valid && bajaAC.touched), 'has-success': (bajaAC.valid && bajaAC.touched)}">
+              <label for="inputbajaAC" class="col-sm-2 form-check-label">Baja</label>
+              <div class="col-sm-10">
+                <input [(ngModel)]="baja" [formControl]="bajaAC" type="checkbox" maxlength='1' class="form-check-input" id="inputbajaAC">
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!created_byAC.valid && created_byAC.touched), 'has-success': (created_byAC.valid && created_byAC.touched)}">
+              <label for="inputcreated_byAC" class="col-sm-2 form-control-label">Created_by</label>
+              <div class="col-sm-10">
+                <input [(ngModel)]="created_by" [formControl]="created_byAC" type="number" maxlength='11' class="form-control" id="inputcreated_byAC">
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!created_atAC.valid && created_atAC.touched), 'has-success': (created_atAC.valid && created_atAC.touched)}">
+              <label for="inputcreated_atAC" class="col-sm-2 form-control-label">Created_at</label>
+              <div class="col-sm-10">
+                <input [(ngModel)]="created_at" [formControl]="created_atAC" type="date"  class="form-control" id="inputcreated_atAC">
+              </div>
+            </div>
+            <div class="form-group row" [ngClass]="{'has-error': (!modified_atAC.valid && modified_atAC.touched), 'has-success': (modified_atAC.valid && modified_atAC.touched)}">
+              <label for="inputmodified_atAC" class="col-sm-2 form-control-label">Modified_at</label>
+              <div class="col-sm-10">
+                <input [(ngModel)]="modified_at" [formControl]="modified_atAC" type="date"  class="form-control" id="inputmodified_atAC">
+              </div>
+            </div>
+          </ba-card>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger cancel-btn" (click)="close()">Cancelar</button>
+          <button [disabled]="!form.valid" class="btn btn-primary confirm-btn" (click)="onSubmit(form.value)">Aceptar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
